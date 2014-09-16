@@ -1,0 +1,60 @@
+\ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/outer/beamerouterthemedesy.sty,v 1.0 2011/08/01 Jan Hajer $
+
+\RequirePackage{array} % vertical centered tabular
+
+% navigation symbols
+
+\setbeamertemplate{navigation symbols}{}
+
+% headline
+
+\setbeamertemplate{headline}{
+\begin{beamercolorbox}[sep=1ex, wd=\paperwidth, ht=10ex]{section in head/foot}
+\vspace{-1ex}
+\usebeamercolor[bg]{section in head/foot}\usebeamercolor[fg]{section in head/foot}\usebeamerfont{section in head/foot}
+\ifx \insertframetitle \@empty
+ { \ifx \insertsubsubsectionhead \@empty
+   { \ifx \insertsubsectionhead \@empty
+     \insertsectionhead
+     \else
+     \insertsubsectionhead
+     \fi
+   }
+   \else
+   \insertsubsubsectionhead
+   \fi
+ }
+\fi
+\vspace{-0.75ex}
+\end{beamercolorbox}
+}
+
+% frametitle
+
+\setbeamertemplate{frametitle}{
+\vspace{-5ex}
+\begin{beamercolorbox}[sep=2ex, wd=\paperwidth]{frametitle}
+\vspace{-1ex}
+\usebeamercolor[bg]{frametitle}\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\insertframetitle
+\vspace{-2.5ex}
+\end{beamercolorbox}
+\vspace{2ex}
+}
+
+% footline
+
+\setbeamertemplate{footline}{
+\vspace{-3.5ex}
+\hfill
+\begin{tabular}{m{.85\textwidth} m{.075\textwidth}}
+   \includegraphics[width=.06\textwidth]{uhh-logo2.jpg}
+   \hfill
+   \usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\insertshortauthor\ |
+   \usebeamercolor[fg]{institute in head/foot}\usebeamerfont{institute in head/foot}\insertshortinstitute\ |
+   \insertshortdate\ |
+   \usebeamercolor[fg]{pagenumber in head/foot} \usebeamerfont{pagenumber in head/foot} Page \insertframenumber
+ & \includegraphics[width=.07\textwidth]{desy}%${DESY-Logo-cyan-RGB_mitVorschau_ger.pdf}
+\end{tabular}
+}
+
+\mode<all>

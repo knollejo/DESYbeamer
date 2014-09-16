@@ -1,0 +1,25 @@
+\ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/font/beamerfontthemedesy.sty,v 1.0 2011/08/01 Jan Hajer $
+
+\def\beamer@ftb@str{
+  \setbeamerfont{structure}{series=\bfseries}
+  \setbeamerfont{local structure}{series=\bfseries}
+  \setbeamerfont{block title}{size={}}
+}
+\def\beamer@ftb@tstr{\setbeamerfont{tiny structure}{series=\bfseries}}
+
+\DeclareOptionBeamer{onlysmall}{\let\beamer@ftb@str=\relax}
+\DeclareOptionBeamer{onlylarge}{\let\beamer@ftb@tstr=\relax}
+
+\ProcessOptionsBeamer
+
+\mode<presentation>{\beamer@suppressreplacementstrue}
+
+\beamer@ftb@str
+\beamer@ftb@tstr
+
+\setbeamerfont{frametitle}{parent=structure,size=\large}
+\setbeamerfont{section in head/foot}{parent=structure,size=\large}
+
+\setbeamerfont{footnote}{size=\scriptsize}
+
+\mode<all>
