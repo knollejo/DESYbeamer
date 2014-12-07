@@ -1,0 +1,54 @@
+\documentclass[aspectratio=43]{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[default]{gillius}
+
+\definecolor{cDESYBlue}{RGB}{0,133,215}
+\definecolor{cDESYOrange}{RGB}{242,142,0}
+\definecolor{desycyan}{RGB}{0,166,235}
+
+\mode<presentation>{
+  \usetheme{desy}
+  \setbeamercovered{transparent}
+}
+
+\usepackage{graphicx}
+\usepackage{amssymb,amsfonts,amsmath,mathtext}
+\graphicspath{{images}}
+\usepackage[normalem]{ulem}
+
+\setbeamercolor{block title}{fg=white,bg=cDESYBlue}
+\setbeamercolor{block body}{fg=white,bg=desycyan}
+
+\setbeamercolor{footnote}{fg=black}
+\setbeamercolor{footnote mark}{fg=black}
+
+\begin{document}
+
+\def \transp{50}
+\beamertemplatenavigationsymbolsempty
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[]{Title}
+\author{Name~Surname}
+\institute[ShortInst]{Institute Name}
+\date{\today}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}[plain]
+  \tableofcontents
+\end{frame}
+
+\section{Intro}
+
+\begin{frame}
+\begin{block}{Block}
+\begin{itemize}
+	\item Item
+\end{itemize}
+\end{block}
+\end{frame}
+
+\end{document}
