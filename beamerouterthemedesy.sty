@@ -44,17 +44,21 @@
 % footline
 
 \setbeamertemplate{footline}{
-\vspace{-3.5ex}
-\hfill
-\begin{tabular}{m{.85\textwidth} m{.075\textwidth}}
-   \includegraphics[width=.06\textwidth]{\string~/Library/texmf/tex/latex/desy/logos/cms-logo}
-   \hfill
-   \usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\insertshortauthor\ $|$
-   \usebeamercolor[fg]{institute in head/foot}\usebeamerfont{institute in head/foot}\insertshortinstitute\ $|$
-   \insertshortdate\ $|$
-   \usebeamercolor[fg]{pagenumber in head/foot} \usebeamerfont{pagenumber in head/foot} Page \insertframenumber
- & \includegraphics[width=.07\textwidth]{\string~/Library/texmf/tex/latex/desy/logos/desy}%${DESY-Logo-cyan-RGB_mitVorschau_ger.pdf}
-\end{tabular}
+\vspace*{-0.04\textwidth}\hfill
+\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\insertshortauthor
+~~|~~
+\usebeamercolor[fg]{institute in head/foot}\usebeamerfont{institute in head/foot}\insertshortinstitute
+~~|~~
+\usebeamercolor[fg]{date in head/foot}\usebeamerfont{date in head/foot}\insertshortdate
+~~|~~
+\usebeamercolor[fg]{pagenumber in head/foot}\usebeamerfont{pagenumber in head/foot}Page~\insertframenumber
+\hspace*{1.5ex}
+\includegraphics[height=0.06\textwidth]{\string./logos/desy}
+\hspace*{1ex}
+\includegraphics[height=0.06\textwidth]{\string./logos/cms}
+\hspace*{1ex}
+\includegraphics[height=0.06\textwidth]{\string./logos/bril}
+\hspace*{1ex}\vspace*{1ex}
 }
 
 \mode<all>
