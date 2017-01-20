@@ -1,59 +1,34 @@
 \documentclass[10pt]{beamer}
+\usetheme{desy}
+\setbeamertemplate{titlegraphic}[cms]
+\setbeamertemplate{logos}[desycms]
 
 \usepackage[T1]{fontenc}
 
-
-%\definecolor{cDESYBlue}{RGB}{0,133,215}
-%\definecolor{cDESYOrange}{RGB}{242,142,0}
-%\definecolor{desycyan}{RGB}{0,166,235}
-
-\mode<presentation>{
-  \usetheme{desy}
-  \setbeamercovered{transparent}
-  \setbeamertemplate{titlegraphic}[cms]
-  \setbeamertemplate{other logo in title}[desycms]
-}
-
-\usepackage{graphicx}
-\usepackage{amssymb,amsfonts,amsmath,mathtext}
-\graphicspath{{images}}
-\usepackage[normalem]{ulem}
-
-%\setbeamercolor{block title}{fg=white,bg=cDESYBlue}
-%\setbeamercolor{block body}{fg=white,bg=desycyan}
-%
-%\setbeamercolor{footnote}{fg=black}
-%\setbeamercolor{footnote mark}{fg=black}
-
-%\def \transp{50}
-%\beamertemplatenavigationsymbolsempty
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Title}
 \subtitle{Subtitle}
-\author{Name~Surname}
-\institute[ShortInst]{Institute Name}
+\author[N. Surname]{Name Surname}
+\institute[ShortConf]{Conference Name}
 \date[\today]{\today}
 
 \begin{document}
 
 \begin{frame}[plain]
-  \titlepage
+	\titlepage
 \end{frame}
 
-%\section{Intro}
-
 \begin{frame}
-\frametitle{A Frame Title}
-\framesubtitle{With a subtitle}
-\begin{block}{Block}
-\begin{itemize}
-	\item Item
-	\item \alert{Something alerted}
-\end{itemize}
-\end{block}
-\begin{example}
-Here comes some example
-\end{example}
+	\frametitle{A Frame Title}
+	\framesubtitle{With a subtitle}
+	\begin{block}{Block name}
+	\begin{itemize}
+		\item Item
+		\item \alert{Something alerted}
+	\end{itemize}
+	\end{block}
+	\begin{example}
+		Here is some example.
+	\end{example}
 \end{frame}
 
 \end{document}

@@ -2,7 +2,65 @@
 
 \mode<presentation>
 
+\defbeamertemplate{frametitle}{desy}{
+	\vspace{-0.1cm}
+	\usebeamerfont{frametitle}
+	\begin{beamercolorbox}[wd=\paperwidth,ht=2.8ex,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{frametitle}
+		\insertframetitle
+	\end{beamercolorbox}
+	\ifx\insertframesubtitle\@empty%
+	\else{
+		\usebeamerfont{framesubtitle}
+		\begin{beamercolorbox}[wd=\paperwidth,ht=2.8ex,dp=0.5ex,leftskip=0.3cm,rightskip=0.3cm]{framesubtitle}
+			\insertframesubtitle
+			\vspace{0.3ex}
+		\end{beamercolorbox}
+	}\fi
+}
 
+\defbeamertemplate{footline}{desy}{
+	\vspace*{-0.5cm}
+	\begin{minipage}{0.68\paperwidth}
+		\usebeamerfont{text in head/foot}
+		\begin{beamercolorbox}[wd=\textwidth,ht=2.25ex,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{text in head/foot}
+			\usebeamertemplate{text in foot}
+		\end{beamercolorbox}
+		\vspace*{-3ex}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.3\paperwidth}\begin{beamercolorbox}[wd=0.3\paperwidth,ht=1cm,dp=0.1cm,right,rightskip=0.3cm]{logo in head/foot}
+		\usebeamertemplate{logo in foot}
+	\end{beamercolorbox}\end{minipage}
+}
+
+\defbeamertemplate{text in foot}{desy}{
+	\usebeamerfont{text in head/foot}
+	{\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\insertshortauthor}
+	~~|~~
+	{\usebeamercolor[fg]{institute in head/foot}\usebeamerfont{institute in head/foot}\insertshortinstitute}
+	~~|~~
+	{\usebeamercolor[fg]{date in head/foot}\usebeamerfont{date in head/foot}\insertshortdate}
+	~~|~~
+	{\usebeamercolor[fg]{pagenumber in head/foot}\usebeamerfont{pagenumber in head/foot}Page~\insertframenumber}
+}
+
+\defbeamertemplate{logo in foot}{desy}{
+	\includegraphics[height=0.85cm]{\string./logos/desy}
+}
+
+\defbeamertemplate{logo in foot}{desycms}{
+	\includegraphics[height=0.85cm]{\string./logos/desy}
+	\hspace{0.2cm}
+	\includegraphics[height=0.85cm]{\string./logos/cms}
+}
+
+\defbeamertemplate{logo in foot}{desycmsbril}{
+	\includegraphics[height=0.85cm]{\string./logos/desy}
+	\hspace{0.2cm}
+	\includegraphics[height=0.85cm]{\string./logos/cms}
+	\hspace{0.2cm}
+	\includegraphics[height=0.85cm]{\string./logos/bril}
+}
 
 %\RequirePackage{array} % vertical centered tabular
 %
@@ -66,3 +124,9 @@
 %}
 %
 %\mode<all>
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle}[desy]
+\setbeamertemplate{footline}[desy]
+\setbeamertemplate{text in foot}[desy]
+\setbeamertemplate{logo in foot}[desy]

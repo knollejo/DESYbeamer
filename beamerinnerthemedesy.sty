@@ -3,7 +3,7 @@
 \mode<presentation>
 
 \defbeamertemplate{title page}{desy}{
-	\vspace{-0.6cm}
+	\vspace{-0.7cm}
 	\usebeamerfont{title}
 	\begin{beamercolorbox}[wd=\paperwidth,ht=1.74cm,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{title}
 		\inserttitle\usebeamercolor[fg]{local structure}.\par%
@@ -58,6 +58,8 @@
 \defbeamertemplate{helmholtz logo in title}{de}{
 	\includegraphics[height=0.8cm]{\string./logos/helmholtz_de}
 }
+
+\defbeamertemplateparent{helmholtz logo}{helmholtz logo in title}{}
 
 \defbeamertemplate{other logo in title}{desy}{
 	\includegraphics[height=1.4cm]{\string./logos/desy}
@@ -190,3 +192,8 @@
 %\setbeamertemplate{items}{\textgreater}
 %\setbeamertemplate{itemize subitem,itemize subsubitem}[square]
 %\setbeamertemplate{bibliography item}{\textgreater}
+
+\setbeamertemplate{title page}[desy]
+\setbeamertemplate{titlegraphic}[desy]
+\setbeamertemplate{logo in title}[desy]
+\setbeamertemplate{helmholtz logo}[en]
