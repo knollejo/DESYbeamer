@@ -1,112 +1,192 @@
-\ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/inner/beamerinnerthemedesy.sty,v 1.0 2011/08/01 Jan Hajer $
-
-\RequirePackage{framed}
-\RequirePackage{perpage}
-
-\newcommand{\result}{-\hspace{-.2em}>}
-% \renewcommand{\thefootnote}{\fnsymbol{footnote}}
-
-\MakePerPage{footnote}
+\ProvidesPackage{beamerinnerthemedesy}[2017/01/20]
 
 \mode<presentation>
 
-% title page
+\defbeamertemplate{title page}{desy}{
+	\vspace{-0.6cm}
+	\usebeamerfont{title}
+	\begin{beamercolorbox}[wd=\paperwidth,ht=1.74cm,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{title}
+		\inserttitle\usebeamercolor[fg]{local structure}.\par%
+	\end{beamercolorbox}
+	\usebeamerfont{subtitle}
+	\begin{beamercolorbox}[wd=\paperwidth,ht=2.8ex,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{subtitle}
+		\insertsubtitle\par%
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[wd=\paperwidth,ht=3.2cm,sep=0cm]{titlegraphic}
+		\usebeamertemplate{titlegraphic}
+	\end{beamercolorbox}
+	\usebeamerfont{text in title}
+	\vspace{1ex}
+	\hfill
+	\begin{beamercolorbox}[wd=0.4\paperwidth,left]{text in title}
+		\usebeamerfont*{author}\usebeamercolor*[fg]{author}\insertauthor\par
+		\usebeamerfont*{institute}\usebeamercolor*[fg]{institute}\insertinstitute\par
+		\usebeamerfont*{date}\usebeamercolor*[fg]{date}\insertdate
+	\end{beamercolorbox}
+	\vfill
+	\begin{beamercolorbox}[wd=\paperwidth,ht=1.9cm,sep=0cm]{logo in title}
+		\usebeamertemplate{logo in title}
+	\end{beamercolorbox}
+	\vspace{-1.1cm}
+}
 
-\defbeamertemplate*{title page}{\string~/Library/texmf/tex/latex/desy/logos/desy}{
+\defbeamertemplate{titlegraphic}{user}{
+	\inserttitlegraphic
+}
 
-\vspace{-4ex}
-\begin{beamercolorbox}[leftskip=1em, sep=.5ex, wd=\paperwidth]{title}\par\par
-\usebeamerfont{title}\inserttitle
-\usebeamercolor[fg]{the unknown}\huge\textrm{.}\par
-\end{beamercolorbox}
-%\begin{beamercolorbox}[leftskip=.6em, sep=.5ex, wd=\paperwidth]{subtitle}
-%  \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+\defbeamertemplate{titlegraphic}{desy}{
+	\includegraphics[width=\paperwidth]{\string./titlegraphics/desy.jpg}
+}
+
+\defbeamertemplate{titlegraphic}{cms}{
+	\includegraphics[width=\paperwidth]{\string./titlegraphics/cms.jpg}
+}
+
+\defbeamertemplate{logo in title}{desy}{
+	\hspace{0.5cm}
+	\usebeamertemplate{helmholtz logo in title}
+	\hfill
+	\usebeamertemplate{other logo in title}
+	\hspace{0.5cm}
+	\vspace{0.5cm}
+}
+
+\defbeamertemplate{helmholtz logo in title}{en}{
+	\includegraphics[height=0.8cm]{\string./logos/helmholtz_en}
+}
+
+\defbeamertemplate{helmholtz logo in title}{de}{
+	\includegraphics[height=0.8cm]{\string./logos/helmholtz_de}
+}
+
+\defbeamertemplate{other logo in title}{desy}{
+	\includegraphics[height=1.4cm]{\string./logos/desy}
+}
+
+\defbeamertemplate{other logo in title}{desycms}{
+	\includegraphics[height=1.4cm]{\string./logos/desy}
+	\hspace{0.5cm}
+	\includegraphics[height=1.4cm]{\string./logos/cms}
+}
+
+\defbeamertemplate{other logo in title}{desycmsbril}{
+	\includegraphics[height=1.4cm]{\string./logos/desy}
+	\hspace{0.5cm}
+	\includegraphics[height=1.4cm]{\string./logos/cms}
+	\hspace{0.5cm}
+	\includegraphics[height=1.4cm]{\string./logos/bril}
+}
+
+\setbeamertemplate{itemize item}{\textgreater}
+\setbeamertemplate{itemize subitem,itemize subsubitem}[square]
+
+%\RequirePackage{framed}
+%\RequirePackage{perpage}
+%
+%\newcommand{\result}{-\hspace{-.2em}>}
+%% \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%
+%\MakePerPage{footnote}
+%
+%\mode<presentation>
+%
+%% title page
+%
+%\defbeamertemplate*{title page}{\string~/Library/texmf/tex/latex/desy/logos/desy}{
+%
+%\vspace{-4ex}
+%\begin{beamercolorbox}[leftskip=1em, sep=.5ex, wd=\paperwidth]{title}\par\par
+%\usebeamerfont{title}\inserttitle
+%\usebeamercolor[fg]{the unknown}\huge\textrm{.}\par
+%\end{beamercolorbox}
+%%\begin{beamercolorbox}[leftskip=.6em, sep=.5ex, wd=\paperwidth]{subtitle}
+%%  \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+%%\end{beamercolorbox}
+%%\vfill
+%\hfill\begin{beamercolorbox}[sep=.5ex, center, wd=\paperwidth]{titlegraphic}
+% \inserttitlegraphic
+%\end{beamercolorbox}
+%%\vfill
+%%\vskip8.5ex
+%%\vskip.5ex
+%\begin{beamercolorbox}[sep=.5ex,wd=\paperwidth,leftskip=.5\paperwidth]{author}
+%%\begin{beamercolorbox}[]{author}
+% \usebeamercolor[fg]{author}\centering\usebeamerfont{author}\insertauthor\par
+% \vspace{1mm}
+% \usebeamercolor[fg]{institute}\usebeamerfont{institute}\insertinstitute\par
+% \vspace{1mm}
+% \usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate\par
 %\end{beamercolorbox}
 %\vfill
-\hfill\begin{beamercolorbox}[sep=.5ex, center, wd=\paperwidth]{titlegraphic}
- \inserttitlegraphic
-\end{beamercolorbox}
-%\vfill
-%\vskip8.5ex
-%\vskip.5ex
-\begin{beamercolorbox}[sep=.5ex,wd=\paperwidth,leftskip=.5\paperwidth]{author}
-%\begin{beamercolorbox}[]{author}
- \usebeamercolor[fg]{author}\centering\usebeamerfont{author}\insertauthor\par
- \vspace{1mm}
- \usebeamercolor[fg]{institute}\usebeamerfont{institute}\insertinstitute\par
- \vspace{1mm}
- \usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate\par
-\end{beamercolorbox}
-\vfill
-%\vskip-20ex
-%\vskip3ex
- \includegraphics[height=7.5ex]{\string./logos/cms}
- \hfill
- \includegraphics[height=7.5ex]{\string./logos/helmh.jpg}
- \hspace{3mm}
- \includegraphics[height=7.5ex]{\string./logos/desy}
-}
-
-% (sub-)section in toc: default
-
-\setbeamertemplate{section in toc}{
- \usebeamerfont{section in toc}
- \usebeamercolor[fg]{local structure}\textgreater\
- \usebeamercolor[fg]{structure}\inserttocsection\par
-}
-
-\setbeamertemplate{subsection in toc}[square]
-
-\setbeamertemplate{subsubsection in toc}{}
-
-% toc at begin of section
-
-\def \sectionwotoc {2}
-
-\AtBeginSection[]{
-\ifnum \value{section} = \sectionwotoc
- \else
- \begin{frame}<beamer>
-    \frametitle{Outline}
-    \tableofcontents[currentsection]
-  \end{frame}
-\fi
-}
-
-\addtobeamertemplate{frame}{
-\transdissolve
-}
-
-
-% (sub-)section in toc shaded, default
-
-\setbeamertemplate{section in toc shaded}
-{\begin{colormixin}{46.6667!parent.bg}\usebeamertemplate{section in toc}\end{colormixin}\unskip}
-
-\setbeamertemplate{subsection in toc shaded}
-{\begin{colormixin}{46.6667!parent.bg}\usebeamertemplate{subsection in toc}\end{colormixin}\unskip}
-
-\setbeamertemplate{subsubsection in toc shaded}
-{\begin{colormixin}{46.6667!parent.bg}\usebeamertemplate{subsubsection in toc}\end{colormixin}\unskip}
-
-% caption
-
-\setbeamertemplate{caption}{
-  \raggedright
-  \insertcaption\par
-}
-
-% bibliography
-
-\setbeamertemplate{bibliography entry article}{}
-\setbeamertemplate{bibliography entry title}{}
-\setbeamertemplate{bibliography entry location}{}
-\setbeamertemplate{bibliography entry note}{}
-
-\mode<all>
-
-% items
-
-\setbeamertemplate{items}{\textgreater}
-\setbeamertemplate{itemize subitem,itemize subsubitem}[square]
-\setbeamertemplate{bibliography item}{\textgreater}
+%%\vskip-20ex
+%%\vskip3ex
+% \includegraphics[height=7.5ex]{\string./logos/cms}
+% \hfill
+% \includegraphics[height=7.5ex]{\string./logos/helmholtz_en}
+% \hspace{3mm}
+% \includegraphics[height=7.5ex]{\string./logos/desy}
+%}
+%
+%% (sub-)section in toc: default
+%
+%\setbeamertemplate{section in toc}{
+% \usebeamerfont{section in toc}
+% \usebeamercolor[fg]{local structure}\textgreater\
+% \usebeamercolor[fg]{structure}\inserttocsection\par
+%}
+%
+%\setbeamertemplate{subsection in toc}[square]
+%
+%\setbeamertemplate{subsubsection in toc}{}
+%
+%% toc at begin of section
+%
+%\def \sectionwotoc {2}
+%
+%\AtBeginSection[]{
+%\ifnum \value{section} = \sectionwotoc
+% \else
+% \begin{frame}<beamer>
+%    \frametitle{Outline}
+%    \tableofcontents[currentsection]
+%  \end{frame}
+%\fi
+%}
+%
+%\addtobeamertemplate{frame}{
+%\transdissolve
+%}
+%
+%
+%% (sub-)section in toc shaded, default
+%
+%\setbeamertemplate{section in toc shaded}
+%{\begin{colormixin}{46.6667!parent.bg}\usebeamertemplate{section in toc}\end{colormixin}\unskip}
+%
+%\setbeamertemplate{subsection in toc shaded}
+%{\begin{colormixin}{46.6667!parent.bg}\usebeamertemplate{subsection in toc}\end{colormixin}\unskip}
+%
+%\setbeamertemplate{subsubsection in toc shaded}
+%{\begin{colormixin}{46.6667!parent.bg}\usebeamertemplate{subsubsection in toc}\end{colormixin}\unskip}
+%
+%% caption
+%
+%\setbeamertemplate{caption}{
+%  \raggedright
+%  \insertcaption\par
+%}
+%
+%% bibliography
+%
+%\setbeamertemplate{bibliography entry article}{}
+%\setbeamertemplate{bibliography entry title}{}
+%\setbeamertemplate{bibliography entry location}{}
+%\setbeamertemplate{bibliography entry note}{}
+%
+%\mode<all>
+%
+%% items
+%
+%\setbeamertemplate{items}{\textgreater}
+%\setbeamertemplate{itemize subitem,itemize subsubitem}[square]
+%\setbeamertemplate{bibliography item}{\textgreater}

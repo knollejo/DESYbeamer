@@ -1,71 +1,75 @@
-\ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/color/beamercolorthemedesy.sty,v 1.0 2011/08/01 Jan Hajer $
+\ProvidesPackage{beamercolorthemedesy}[2017/01/20]
 
 \mode<presentation>
 
 \definecolor{desyblue}{RGB}{0,166,235}
 \definecolor{desyorange}{RGB}{242,142,0}
-\definecolor{desygray}{RGB}{119,119,119}
+\definecolor{desygrey}{RGB}{119,119,119}
 
-\definecolor{darkgreen}{RGB}{0,128,0}
-\definecolor{darkblue}{RGB}{0,0,128}
-
-\setbeamercolor{normal text}{fg=black,bg=white}
 \setbeamercolor{alerted text}{fg=desyorange}
 \setbeamercolor{example text}{fg=desyblue}
 
 \setbeamercolor{structure}{fg=desyblue}
 \setbeamercolor{local structure}{fg=desyorange}
 
-\setbeamercolor{title}{fg=white,bg=desyblue}
+\setbeamercolor{titlelike}{fg=white,bg=desyblue}
 \setbeamercolor{subtitle}{fg=desyorange,bg=white}
+\setbeamercolor{framesubtitle}{parent=subtitle}
+\setbeamercolor{logo in title}{parent=structure}
+\setbeamercolor{text in title}{parent=structure}
+
 \setbeamercolor{author}{fg=desyblue}
-\setbeamercolor{date}{fg=black}
-\setbeamercolor{institute}{fg=black}
+\setbeamercolor{titlegraphic}{bg=desyblue}
+\setbeamercolor{logo}{fg=black,bg=white}
 
-\setbeamercolor{title in head/foot}{fg=desygray}
-\setbeamercolor{subtitle in head/foot}{fg=desygray}
-
-\setbeamercolor{author in head/foot}{fg=desygray}
-\setbeamercolor{institute in head/foot}{fg=desygray}
-\setbeamercolor{date in head/foot}{fg=desygray}
-\setbeamercolor{pagenumber in head/foot}{fg=desygray}
-
-\setbeamercolor{frametitle}{fg=white,bg=desyblue}
-\setbeamercolor{section in head/foot}{fg=white,bg=desyblue}
-\setbeamercolor{subsection in head/foot}{fg=white,bg=desyblue}
-\setbeamercolor{subsubsection in head/foot}{fg=white,bg=desyblue}
-
-\setbeamercolor{subsection number projected}{fg=black,bg=desygray}
-
-\setbeamercolor{the unknown}{parent=local structure}
-
-\setbeamercolor{palette primary}{use=structure,fg=structure.fg}
-\setbeamercolor{palette secondary}{use=structure,fg=structure.fg!75!black}
-\setbeamercolor{palette tertiary}{use=local structure,fg=local structure.fg}
-\setbeamercolor{palette quaternary}{fg=black}
-
-\setbeamercolor{block body}{}
-\setbeamercolor{block body alerted}{}
-\setbeamercolor{block body example}{}
-\setbeamercolor{block title}{parent=structure}
-\setbeamercolor{block title alerted}{parent=alerted text}
-\setbeamercolor{block title example}{parent=example text}
-
+%\definecolor{darkgreen}{RGB}{0,128,0}
+%\definecolor{darkblue}{RGB}{0,0,128}
 %
-% \setbeamercolor{block body desy}{}
-% \setbeamercolor{block title desy}{parent=structure}
-
-\setbeamercolor{bibliography entry author}{fg=black}
-\setbeamercolor{bibliography entry title}{fg=structure}
-\setbeamercolor{bibliography entry location}{fg=black}
-\setbeamercolor{bibliography entry note}{fg=black}
-
-
-\setbeamercolor{footnote}{fg=desygray}
-\setbeamercolor{footnote mark}{fg=desygray}
-
-\setbeamercolor{subsection in toc shaded}{fg=desygray}
-
-\setbeamercolor{frame}{fg=black}
+%\setbeamercolor{title}{fg=white,bg=desyblue}
+%
+%\setbeamercolor{date}{fg=black}
+%\setbeamercolor{institute}{fg=black}
+%
+%\setbeamercolor{title in head/foot}{fg=desygray}
+%\setbeamercolor{subtitle in head/foot}{fg=desygray}
+%
+%\setbeamercolor{author in head/foot}{fg=desygray}
+%\setbeamercolor{institute in head/foot}{fg=desygray}
+%\setbeamercolor{date in head/foot}{fg=desygray}
+%\setbeamercolor{pagenumber in head/foot}{fg=desygray}
+%
+%\setbeamercolor{frametitle}{fg=white,bg=desyblue}
+%\setbeamercolor{section in head/foot}{fg=white,bg=desyblue}
+%\setbeamercolor{subsection in head/foot}{fg=white,bg=desyblue}
+%\setbeamercolor{subsubsection in head/foot}{fg=white,bg=desyblue}
+%
+%\setbeamercolor{subsection number projected}{fg=black,bg=desygray}
+%
+%\setbeamercolor{the unknown}{parent=local structure}
+%
+%\setbeamercolor{palette primary}{use=structure,fg=structure.fg}
+%\setbeamercolor{palette secondary}{use=structure,fg=structure.fg!75!black}
+%\setbeamercolor{palette tertiary}{use=local structure,fg=local structure.fg}
+%\setbeamercolor{palette quaternary}{fg=black}
+%
+%\setbeamercolor{block body}{}
+%\setbeamercolor{block body alerted}{}
+%\setbeamercolor{block body example}{}
+%\setbeamercolor{block title}{parent=structure}
+%\setbeamercolor{block title alerted}{parent=alerted text}
+%\setbeamercolor{block title example}{parent=example text}
+%
+%\setbeamercolor{bibliography entry author}{fg=black}
+%\setbeamercolor{bibliography entry title}{fg=structure}
+%\setbeamercolor{bibliography entry location}{fg=black}
+%\setbeamercolor{bibliography entry note}{fg=black}
+%
+%
+%\setbeamercolor{footnote}{fg=desygray}
+%\setbeamercolor{footnote mark}{fg=desygray}
+%
+%\setbeamercolor{subsection in toc shaded}{fg=desygray}
+%
+%\setbeamercolor{frame}{fg=black}
 
 \mode<all>

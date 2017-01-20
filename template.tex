@@ -1,15 +1,17 @@
-\documentclass[12pt]{beamer}
+\documentclass[10pt]{beamer}
 
 \usepackage[T1]{fontenc}
-\usepackage{helvet}
 
-\definecolor{cDESYBlue}{RGB}{0,133,215}
-\definecolor{cDESYOrange}{RGB}{242,142,0}
-\definecolor{desycyan}{RGB}{0,166,235}
+
+%\definecolor{cDESYBlue}{RGB}{0,133,215}
+%\definecolor{cDESYOrange}{RGB}{242,142,0}
+%\definecolor{desycyan}{RGB}{0,166,235}
 
 \mode<presentation>{
   \usetheme{desy}
   \setbeamercovered{transparent}
+  \setbeamertemplate{titlegraphic}[cms]
+  \setbeamertemplate{other logo in title}[desycms]
 }
 
 \usepackage{graphicx}
@@ -17,38 +19,41 @@
 \graphicspath{{images}}
 \usepackage[normalem]{ulem}
 
-\setbeamercolor{block title}{fg=white,bg=cDESYBlue}
-\setbeamercolor{block body}{fg=white,bg=desycyan}
+%\setbeamercolor{block title}{fg=white,bg=cDESYBlue}
+%\setbeamercolor{block body}{fg=white,bg=desycyan}
+%
+%\setbeamercolor{footnote}{fg=black}
+%\setbeamercolor{footnote mark}{fg=black}
 
-\setbeamercolor{footnote}{fg=black}
-\setbeamercolor{footnote mark}{fg=black}
-
-\begin{document}
-
-\def \transp{50}
-\beamertemplatenavigationsymbolsempty
+%\def \transp{50}
+%\beamertemplatenavigationsymbolsempty
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title[]{Title}
+\title{Title}
+\subtitle{Subtitle}
 \author{Name~Surname}
 \institute[ShortInst]{Institute Name}
 \date[\today]{\today}
+
+\begin{document}
 
 \begin{frame}[plain]
   \titlepage
 \end{frame}
 
-\begin{frame}[plain]
-  \tableofcontents
-\end{frame}
-
-\section{Intro}
+%\section{Intro}
 
 \begin{frame}
+\frametitle{A Frame Title}
+\framesubtitle{With a subtitle}
 \begin{block}{Block}
 \begin{itemize}
 	\item Item
+	\item \alert{Something alerted}
 \end{itemize}
 \end{block}
+\begin{example}
+Here comes some example
+\end{example}
 \end{frame}
 
 \end{document}
