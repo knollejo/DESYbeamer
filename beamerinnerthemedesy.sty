@@ -84,6 +84,14 @@
 \settowidth\leftmargini{\usefont{OML}{cmm}{m}{it}\usebeamertemplate{itemize item}}
 \addtolength\leftmargini{\labelsep}
 
+\defbeamertemplate{backup title}{desy}{Supplementary\\Material}
+\defbeamertemplate{backup title page}{desy}{%
+\usebeamerfont{title}
+\begin{beamercolorbox}[wd=\paperwidth,ht=1.74cm,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{title}
+    \usebeamertemplate{backup title}\usebeamercolor[fg]{local structure}.\par%
+\end{beamercolorbox}}
+\defbeamertemplateparent{backup}{backup title,backup title page}{}
+
 %\RequirePackage{framed}
 %\RequirePackage{perpage}
 %

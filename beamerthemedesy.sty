@@ -7,8 +7,15 @@
 \useinnertheme{desy}
 \useoutertheme{desy}
 
+\def\maketitle{\ifbeamer@inframe\titlepage\else\frame[plain]{\titlepage}\fi}
+
 \defbeamertemplateparent{logos}{other logo in title,logo in foot}{}
 
 \renewcommand{\emph}[1]{{\usebeamercolor[fg]{emphasized text}#1}}
+
+\setbeamertemplate{backup}[desy]
+\DeclareRobustCommand\backup{\@ifnextchar[{\@@backup}{\@backup}}
+\def\@backup{\appendix\begin{frame}\usebeamertemplate{backup title page}\end{frame}}
+\def\@@backup[#1]{\setbeamertemplate{backup title}{#1}\@backup}
 
 \mode<all>
