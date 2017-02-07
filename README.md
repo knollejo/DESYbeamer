@@ -34,6 +34,7 @@ LaTeX beamer theme for DESY corporate design, based on previous work of Artur Lo
 * Change the photo on the title slide (details in titlegraphics/README.md).
 * Change the logos that appear on the bottom of each slide (details in logos/README.md).
 * Include a title page for the backup section with the ```\backup``` command (no need to call ```\appendix``` additionally), or use ```\backup[Supplementary\\Material]``` to modify the default headline.
+* Change the way the slide number is written on each slide with ```\setbeamertemplate{page number in foot}[option]```, with the options ```page``` for Page 2, ```page/total``` for Page 2/7, ```slide``` for Slide 2, ```slide/total``` for Slide 2/7, ```number``` for 2, ```number/total``` for 2/7.
 
 ## ToDo:
 

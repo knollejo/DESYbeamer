@@ -23,6 +23,7 @@
 	\begin{minipage}{0.68\paperwidth}
 		\usebeamerfont{text in head/foot}
 		\begin{beamercolorbox}[wd=\textwidth,ht=2.25ex,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{text in head/foot}
+			\usebeamerfont{text in head/foot}
 			\usebeamertemplate{text in foot}
 		\end{beamercolorbox}
 		\vspace*{-3ex}
@@ -34,15 +35,21 @@
 }
 
 \defbeamertemplate{text in foot}{desy}{
-	\usebeamerfont{text in head/foot}
 	{\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\insertshortauthor}
-	~~|~~
+	\usebeamertemplate{separator in foot}
 	{\usebeamercolor[fg]{institute in head/foot}\usebeamerfont{institute in head/foot}\insertshortinstitute}
-	~~|~~
+	\usebeamertemplate{separator in foot}
 	{\usebeamercolor[fg]{date in head/foot}\usebeamerfont{date in head/foot}\insertshortdate}
-	~~|~~
-	{\usebeamercolor[fg]{pagenumber in head/foot}\usebeamerfont{pagenumber in head/foot}Page~\insertframenumber}
+	\usebeamertemplate{separator in foot}
+	{\usebeamercolor[fg]{pagenumber in head/foot}\usebeamerfont{pagenumber in head/foot}\usebeamertemplate{page number in foot}}
 }
+\defbeamertemplate{page number in foot}{page}{Page~\insertframenumber}
+\defbeamertemplate{page number in foot}{page/total}{Page~\insertframenumber/\inserttotalframenumber}
+\defbeamertemplate{page number in foot}{slide}{Slide~\insertframenumber}
+\defbeamertemplate{page number in foot}{slide/total}{Slide~\insertframenumber/\inserttotalframenumber}
+\defbeamertemplate{page number in foot}{number}{\insertframenumber}
+\defbeamertemplate{page number in foot}{number/total}{\insertframenumber/\inserttotalframenumber}
+\defbeamertemplate{separator in foot}{desy}{~~|~~}
 
 \defbeamertemplate{logo in foot}{desy}{
 	\includegraphics[height=0.85cm]{\string./logos/desy}
@@ -62,71 +69,12 @@
 	\includegraphics[height=0.85cm]{\string./logos/bril}
 }
 
-%\RequirePackage{array} % vertical centered tabular
-%
-%% navigation symbols
-%
-%\setbeamertemplate{navigation symbols}{}
-%
-%% headline
-%
-%\setbeamertemplate{headline}{
-%\begin{beamercolorbox}[sep=1ex, wd=\paperwidth, ht=10ex]{section in head/foot}
-%\vspace{1ex}
-%\usebeamercolor[bg]{section in head/foot}\usebeamercolor[fg]{section in head/foot}\usebeamerfont{section in head/foot}
-%\ifx \insertframetitle \@empty
-% { \ifx \insertsubsubsectionhead \@empty
-%   { \ifx \insertsubsectionhead \@empty
-%     \insertsectionhead
-%     \else
-%     \insertsubsectionhead
-%     \fi
-%   }
-%   \else
-%   \insertsubsubsectionhead
-%   \fi
-% }
-%\fi
-%\vspace{-0.75ex}
-%\end{beamercolorbox}
-%}
-%
-%% frametitle
-%
-%\setbeamertemplate{frametitle}{
-%\vspace{-5ex}
-%\begin{beamercolorbox}[sep=2ex, wd=\paperwidth]{frametitle}
-%\vspace{-1ex}
-%\usebeamercolor[bg]{frametitle}\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\insertframetitle
-%\vspace{-2.5ex}
-%\end{beamercolorbox}
-%\vspace{2ex}
-%}
-%
-%% footline
-%
-%\setbeamertemplate{footline}{
-%\vspace*{-0.04\textwidth}\hfill
-%\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\insertshortauthor
-%~~|~~
-%\usebeamercolor[fg]{institute in head/foot}\usebeamerfont{institute in head/foot}\insertshortinstitute
-%~~|~~
-%\usebeamercolor[fg]{date in head/foot}\usebeamerfont{date in head/foot}\insertshortdate
-%~~|~~
-%\usebeamercolor[fg]{pagenumber in head/foot}\usebeamerfont{pagenumber in head/foot}Page~\insertframenumber
-%\hspace*{1.5ex}
-%\includegraphics[height=0.06\textwidth]{\string./logos/desy}
-%\hspace*{1ex}
-%\includegraphics[height=0.06\textwidth]{\string./logos/cms}
-%\hspace*{1ex}
-%\includegraphics[height=0.06\textwidth]{\string./logos/bril}
-%\hspace*{1ex}\vspace*{1ex}
-%}
-%
-%\mode<all>
-
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{frametitle}[desy]
 \setbeamertemplate{footline}[desy]
 \setbeamertemplate{text in foot}[desy]
 \setbeamertemplate{logo in foot}[desy]
+\setbeamertemplate{separator in foot}[desy]
+\setbeamertemplate{page number in foot}[page]
+
+\mode<all>
