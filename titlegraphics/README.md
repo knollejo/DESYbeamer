@@ -13,7 +13,7 @@ Include in the LaTeX header one of:
 
 * `\setbeamertemplate{titlegraphic}[desy]` for desy.jpg (default)
 * `\setbeamertemplate{titlegraphic}[cms]` for cms.jpg
-* For a user-defined image user.jpg (optimal ratio is 25:1), use
+* For a user-defined image user.jpg (optimal ratio is 4:1), use
 ```latex
 \setbeamertemplate{titlegraphic}[user]
 \titlegraphic{\includegraphics[width=\paperwidth,height=3.2cm]{user.jpg}}

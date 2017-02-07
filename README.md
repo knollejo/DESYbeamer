@@ -23,9 +23,19 @@ LaTeX beamer theme for DESY corporate design, based on previous work of Artur Lo
 
 \begin{document}
 
-\begin{frame}[plain]
-	\titlepage
-\end{frame}
+\maketitle
 
 \end{document}
 ```
+
+## Features:
+
+* Highlight text with ```\emph{}``` in DESY blue or ```\alert{}``` in DESY orange.
+* Change the photo on the title slide (details in titlegraphics/README.md).
+* Change the logos that appear on the bottom of each slide (details in logos/README.md).
+* Include a title page for the backup section with the ```\backup``` command (no need to call ```\appendix``` additionally), or use ```\backup[Supplementary\\Material]``` to modify the default headline.
+
+## ToDo:
+
+* Doesn't work with global text size other than 10pt.
+* If author or institute is longer than one line, the logos on the title page are pushed down.
