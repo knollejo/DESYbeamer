@@ -11,7 +11,8 @@
 
 \defbeamertemplateparent{logos}{other logo in title,logo in foot}{}
 
-\renewcommand{\emph}[1]{{\usebeamercolor[fg]{emphasized text}#1}}
+\newcommand<>{\textemph}[1]{{\only#2{\usebeamercolor[fg]{emphasized text}}#1}}
+\let\emph\textemph
 
 \DeclareRobustCommand\backup{\@ifnextchar[{\@@backup}{\@backup}}
 \def\@backup{\appendix\begin{frame}\usebeamertemplate{backup title page}\end{frame}}
