@@ -1,33 +1,36 @@
 \ProvidesPackage{beamerinnerthemedesy}[2017/01/20]
+\RequirePackage[absolute,overlay]{textpos}
 
 \mode<presentation>
 
 \defbeamertemplate{title page}{desy}{
-	\vspace{-0.7cm}
-	\usebeamerfont{title}
-	\begin{beamercolorbox}[wd=\paperwidth,ht=1.74cm,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{title}
-		\inserttitle\usebeamercolor[fg]{local structure}.\par%
-	\end{beamercolorbox}
-	\usebeamerfont{subtitle}
-	\begin{beamercolorbox}[wd=\paperwidth,ht=2.8ex,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{subtitle}
-		\insertsubtitle\par%
-	\end{beamercolorbox}
-	\begin{beamercolorbox}[wd=\paperwidth,ht=3.2cm,sep=0cm]{titlegraphic}
-		\usebeamertemplate{titlegraphic}
-	\end{beamercolorbox}
-	\usebeamerfont{text in title}
-	\vspace{1ex}
-	\hfill
-	\begin{beamercolorbox}[wd=0.4\paperwidth,left]{text in title}
-		\usebeamerfont*{author}\usebeamercolor*[fg]{author}\insertauthor\par
-		\usebeamerfont*{institute}\usebeamercolor*[fg]{institute}\insertinstitute\par
-		\usebeamerfont*{date}\usebeamercolor*[fg]{date}\insertdate
-	\end{beamercolorbox}
-	\vfill
-	\begin{beamercolorbox}[wd=\paperwidth,ht=1.9cm,sep=0cm]{logo in title}
-		\usebeamertemplate{logo in title}
-	\end{beamercolorbox}
-	\vspace{-1.1cm}
+    \begin{textblock*}{\paperwidth}(0cm,0cm)\begin{beamercolorbox}[wd=\paperwidth,ht=1.74cm,dp=0.36cm,leftskip=0.3cm,rightskip=0.3cm]{title}
+        \usebeamerfont{title}\inserttitle\usebeamercolor[fg]{local structure}.\par%
+    \end{beamercolorbox}\end{textblock*}
+    \ifx\insertsubtitle\@empty
+    \begin{textblock*}{\paperwidth}(0cm,2.1cm)
+    \else
+    \begin{textblock*}{\paperwidth}(0cm,2.1cm)\begin{beamercolorbox}[wd=\paperwidth,ht=0.5cm,dp=0.17cm,leftskip=0.3cm,rightskip=0.3cm]{subtitle}
+        \usebeamerfont{subtitle}\insertsubtitle\par%
+    \end{beamercolorbox}\end{textblock*}
+    \begin{textblock*}{\paperwidth}(0cm,2.77cm)
+    \fi
+    \begin{beamercolorbox}[wd=\paperwidth,ht=3.2cm,sep=0cm]{titlegraphic}
+        \usebeamertemplate{titlegraphic}
+    \end{beamercolorbox}\end{textblock*}
+    \ifx\insertsubtitle\@empty
+    \begin{textblock*}{0.44\paperwidth}(0.51\paperwidth,5.47cm)
+    \else
+    \begin{textblock*}{0.44\paperwidth}(0.51\paperwidth,6.14cm)
+    \fi
+        \usebeamercolor[fg]{text in title}\usebeamerfont{text in title}%
+        \usebeamerfont*{author}\usebeamercolor[fg]{author}\insertauthor\par
+        \usebeamerfont*{institute}\usebeamercolor*[fg]{institute}\insertinstitute\par
+        \usebeamerfont*{date}\usebeamercolor*[fg]{date}\insertdate
+    \end{textblock*}
+    \begin{textblock*}{0.9\paperwidth}(0.05\paperwidth,7.7cm)
+        \usebeamertemplate{logo in title}
+    \end{textblock*}
 }
 
 \defbeamertemplate{titlegraphic}{user}{
@@ -43,12 +46,9 @@
 }
 
 \defbeamertemplate{logo in title}{desy}{
-	\hspace{0.5cm}
 	\usebeamertemplate{helmholtz logo in title}
 	\hfill
 	\usebeamertemplate{other logo in title}
-	\hspace{0.5cm}
-	\vspace{0.5cm}
 }
 
 \defbeamertemplate{helmholtz logo in title}{en}{
@@ -90,10 +90,11 @@
 \defbeamertemplate{backup title}{desy}{Supplementary\\Material}
 \defbeamertemplate{backup title}{thankyou}{Thanks for your attention}
 \defbeamertemplate{backup title page}{desy}{%
-\usebeamerfont{title}
-\begin{beamercolorbox}[wd=\paperwidth,ht=1.74cm,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{title}
-    \usebeamertemplate{backup title}\usebeamercolor[fg]{local structure}.\par%
-\end{beamercolorbox}}
+    \usebeamerfont{title}
+    \begin{beamercolorbox}[wd=\paperwidth,ht=1.74cm,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{title}
+        \usebeamertemplate{backup title}\usebeamercolor[fg]{local structure}.\par%
+    \end{beamercolorbox}%
+}
 \defbeamertemplateparent{backup}{backup title,backup title page}{}
 
 \setbeamertemplate{title page}[desy]

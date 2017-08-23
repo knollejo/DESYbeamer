@@ -41,4 +41,3 @@ LaTeX beamer theme for DESY corporate design, based on previous work of Artur Lo
 ## ToDo:
 
 * Doesn't work with global text size other than 10pt.
-* If author or institute is longer than one line, the logos on the title page are pushed down.
