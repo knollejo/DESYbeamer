@@ -1,6 +1,6 @@
 \ProvidesPackage{beamerouterthemedesy}[2017/01/20]
 \RequirePackage{etoolbox}
-\newcommand{\ifhastext}[3]{\sbox0{#1}\ifdim\wd0=0pt {#3} \else {#2} \fi}
+\newcommand{\ifhastext}[3]{\sbox0{#1}\ifdim\wd0=0pt{#3}\else{#2}\fi}
 
 \mode<presentation>
 
@@ -28,14 +28,14 @@
     \end{beamercolorbox}
 }
 
-\defbeamertemplate{text in foot}{desy}{
-	{\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\insertshortauthor}
-	\usebeamertemplate{separator in foot}
-	{\usebeamercolor[fg]{institute in head/foot}\usebeamerfont{institute in head/foot}\insertshortinstitute}
-	\usebeamertemplate{separator in foot}
-	{\usebeamercolor[fg]{date in head/foot}\usebeamerfont{date in head/foot}\insertshortdate}
-	\usebeamertemplate{separator in foot}
-	{\usebeamercolor[fg]{pagenumber in head/foot}\usebeamerfont{pagenumber in head/foot}\usebeamertemplate{page number in foot}}
+\defbeamertemplate{text in foot}{desy}{%
+    \ifhastext{\insertshortauthor}{{\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\insertshortauthor}%
+    \usebeamertemplate{separator in foot}}{}%
+    \ifhastext{\insertshortinstitute}{{\usebeamercolor[fg]{institute in head/foot}\usebeamerfont{institute in head/foot}\insertshortinstitute}%
+    \usebeamertemplate{separator in foot}}{}%
+    \ifhastext{\insertshortdate}{{\usebeamercolor[fg]{date in head/foot}\usebeamerfont{date in head/foot}\insertshortdate}%
+    \usebeamertemplate{separator in foot}}{}%
+    {\usebeamercolor[fg]{pagenumber in head/foot}\usebeamerfont{pagenumber in head/foot}\usebeamertemplate{page number in foot}}%
 }
 \defbeamertemplate{page number in foot}{page}{Page~\insertframenumber}
 \defbeamertemplate{page number in foot}{page/total}{Page~\insertframenumber/\inserttotalframenumber}

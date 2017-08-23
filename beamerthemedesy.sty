@@ -14,6 +14,7 @@
 \newcommand<>{\textemph}[1]{{\only#2{\usebeamercolor[fg]{emphasized text}}#1}}
 \let\emph\textemph
 
+\renewcommand{\appendixname}{Backup}
 \DeclareRobustCommand\backup{\@ifnextchar[{\@@backup}{\@backup}}
 \def\@backup{\appendix\begin{frame}\usebeamertemplate{backup title page}\end{frame}}
 \def\@@backup[#1]{\setbeamertemplate{backup title}{#1}\@backup}
