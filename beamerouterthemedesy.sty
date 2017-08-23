@@ -1,4 +1,6 @@
 \ProvidesPackage{beamerouterthemedesy}[2017/01/20]
+\newcommand{\ifhastext}[3]{\sbox0{#1}\ifdim\wd0=0pt {#3} \else {#2} \fi}
+\usepackage{etoolbox}
 
 \mode<presentation>
 
@@ -19,19 +21,11 @@
 }
 
 \defbeamertemplate{footline}{desy}{
-	\vspace*{-0.5cm}
-	\begin{minipage}{0.68\paperwidth}
-		\usebeamerfont{text in head/foot}
-		\begin{beamercolorbox}[wd=\textwidth,ht=2.25ex,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{text in head/foot}
-			\usebeamerfont{text in head/foot}
-			\usebeamertemplate{text in foot}
-		\end{beamercolorbox}
-		\vspace*{-3ex}
-	\end{minipage}
-	\hfill
-	\begin{minipage}{0.3\paperwidth}\begin{beamercolorbox}[wd=0.3\paperwidth,ht=1cm,dp=0.1cm,right,rightskip=0.3cm]{logo in head/foot}
-		\usebeamertemplate{logo in foot}
-	\end{beamercolorbox}\end{minipage}
+    \usebeamerfont{text in head/foot}
+    \begin{beamercolorbox}[wd=\paperwidth,ht=0.5cm,dp=0.2cm,leftskip=0.3cm,rightskip=0.3cm]{text in head/foot}
+        \hfill\raisebox{0.34cm}{\usebeamertemplate{text in foot}}
+        \hspace{0.1cm}\usebeamertemplate{logos in foot}
+    \end{beamercolorbox}
 }
 
 \defbeamertemplate{text in foot}{desy}{
@@ -51,28 +45,61 @@
 \defbeamertemplate{page number in foot}{number/total}{\insertframenumber/\inserttotalframenumber}
 \defbeamertemplate{separator in foot}{desy}{~~|~~}
 
-\defbeamertemplate{logo in foot}{desy}{
-	\includegraphics[height=0.85cm]{\string./logos/desy}
+\defbeamertemplate{logos in foot}{horizontal}{
+    \usebeamertemplate{first logo in foot}
+    \ifhastext{\usebeamertemplate{second logo in foot}}{
+        \hspace{0.2cm}\usebeamertemplate{second logo in foot}
+    }{}
+    \ifhastext{\usebeamertemplate{third logo in foot}}{
+        \hspace{0.2cm}\usebeamertemplate{third logo in foot}
+    }{}
+}
+\defbeamertemplate{logos in foot}{vertical}{
+    \ifhastext{\usebeamertemplate{third logo in foot}}{
+        \hspace{0.425cm}
+        \makebox[0pt]{\raisebox{2.1cm}{\usebeamertemplate{first logo in foot}}}%
+        \makebox[0pt]{\raisebox{1.05cm}{\usebeamertemplate{second logo in foot}}}%
+        \makebox[0pt]{\usebeamertemplate{third logo in foot}}
+        \hspace{0.425cm}
+    }{\ifhastext{\usebeamertemplate{second logo in foot}}{
+        \hspace{0.425cm}
+        \makebox[0pt]{\raisebox{1.05cm}{\usebeamertemplate{first logo in foot}}}%
+        \makebox[0pt]{\usebeamertemplate{second logo in foot}}
+        \hspace{0.425cm}
+    }{\usebeamertemplate{first logo in foot}}}
 }
 
-\defbeamertemplate{logo in foot}{desycms}{
-	\includegraphics[height=0.85cm]{\string./logos/desy}
-	\hspace{0.2cm}
-	\includegraphics[height=0.85cm]{\string./logos/cms}
+\defbeamertemplate{first logo in foot}{none}{}
+\defbeamertemplate{first logo in foot}{desy}{
+    \includegraphics[height=0.85cm]{logos/desy}
 }
+\defbeamertemplate{second logo in foot}{none}{}
+\defbeamertemplate{second logo in foot}{cms}{
+    \includegraphics[height=0.85cm]{logos/cms}
+}
+\defbeamertemplate{third logo in foot}{none}{}
+\defbeamertemplate{third logo in foot}{bril}{
+    \includegraphics[height=0.85cm]{logos/bril}
+}
+\defbeamertemplatealias{second logo in foot}{desy}{none}
+\defbeamertemplatealias{third logo in foot}{desy}{none}
+\defbeamertemplatealias{first logo in foot}{desycms}{desy}
+\defbeamertemplatealias{second logo in foot}{desycms}{cms}
+\defbeamertemplatealias{third logo in foot}{desycms}{none}
+\defbeamertemplatealias{first logo in foot}{desycmsbril}{desy}
+\defbeamertemplatealias{second logo in foot}{desycmsbril}{cms}
+\defbeamertemplatealias{third logo in foot}{desycmsbril}{bril}
 
-\defbeamertemplate{logo in foot}{desycmsbril}{
-	\includegraphics[height=0.85cm]{\string./logos/desy}
-	\hspace{0.2cm}
-	\includegraphics[height=0.85cm]{\string./logos/cms}
-	\hspace{0.2cm}
-	\includegraphics[height=0.85cm]{\string./logos/bril}
-}
+\defbeamertemplateparent{logo in foot}{first logo in foot,second logo in foot,third logo in foot}{}
+
+\BeforeBeginEnvironment{frame}{\setbeamertemplate{logos in foot}[horizontal]}
+\define@key{beamerframe}{vertical}[true]{\setbeamertemplate{logos in foot}[vertical]}
 
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{frametitle}[desy]
 \setbeamertemplate{footline}[desy]
 \setbeamertemplate{text in foot}[desy]
+\setbeamertemplate{logos in foot}[horizontal]
 \setbeamertemplate{logo in foot}[desy]
 \setbeamertemplate{separator in foot}[desy]
 \setbeamertemplate{page number in foot}[page]

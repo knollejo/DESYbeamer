@@ -35,11 +35,11 @@
 }
 
 \defbeamertemplate{titlegraphic}{desy}{
-	\includegraphics[width=\paperwidth]{\string./titlegraphics/desy.jpg}
+	\includegraphics[width=\paperwidth]{titlegraphics/desy.jpg}
 }
 
 \defbeamertemplate{titlegraphic}{cms}{
-	\includegraphics[width=\paperwidth]{\string./titlegraphics/cms.jpg}
+	\includegraphics[width=\paperwidth]{titlegraphics/cms.jpg}
 }
 
 \defbeamertemplate{logo in title}{desy}{
@@ -52,39 +52,43 @@
 }
 
 \defbeamertemplate{helmholtz logo in title}{en}{
-	\includegraphics[height=0.8cm]{\string./logos/helmholtz_en}
+	\includegraphics[height=0.8cm]{logos/helmholtz_en}
 }
 
 \defbeamertemplate{helmholtz logo in title}{de}{
-	\includegraphics[height=0.8cm]{\string./logos/helmholtz_de}
+	\includegraphics[height=0.8cm]{logos/helmholtz_de}
 }
 
 \defbeamertemplateparent{helmholtz logo}{helmholtz logo in title}{}
 
 \defbeamertemplate{other logo in title}{desy}{
-	\includegraphics[height=1.4cm]{\string./logos/desy}
+	\includegraphics[height=1.4cm]{logos/desy}
 }
 
 \defbeamertemplate{other logo in title}{desycms}{
-	\includegraphics[height=1.4cm]{\string./logos/desy}
+	\includegraphics[height=1.4cm]{logos/desy}
 	\hspace{0.5cm}
-	\includegraphics[height=1.4cm]{\string./logos/cms}
+	\includegraphics[height=1.4cm]{logos/cms}
 }
 
 \defbeamertemplate{other logo in title}{desycmsbril}{
-	\includegraphics[height=1.4cm]{\string./logos/desy}
+	\includegraphics[height=1.4cm]{logos/desy}
 	\hspace{0.5cm}
-	\includegraphics[height=1.4cm]{\string./logos/cms}
+	\includegraphics[height=1.4cm]{logos/cms}
 	\hspace{0.5cm}
-	\includegraphics[height=1.4cm]{\string./logos/bril}
+	\includegraphics[height=1.4cm]{logos/bril}
 }
 
-\setbeamertemplate{itemize item}{\textgreater}
-\setbeamertemplate{itemize subitem,itemize subsubitem}[square]
+\setbeamertemplate{itemize item}{\usebeamercolor[fg]{itemize items}\textgreater}
+\setbeamertemplate{itemize subitem}{\usebeamercolor[fg]{itemize items}\raisebox{1pt}{$\blacktriangleright$}}
+\setbeamertemplate{itemize subsubitem}{\usebeamercolor[fg]{itemize items}\raisebox{1pt}{$\blacktriangleright$}}
 \settowidth\leftmargini{\usefont{OML}{cmm}{m}{it}\usebeamertemplate{itemize item}}
 \addtolength\leftmargini{\labelsep}
+\newcommand{\atem}{\setbeamercolor{itemize items}{parent=alerted text}\item\setbeamercolor{itemize items}{parent=local structure}}
+\newcommand{\etem}{\setbeamercolor{itemize items}{parent=emphasized text}\item\setbeamercolor{itemize items}{parent=local structure}}
 
 \defbeamertemplate{backup title}{desy}{Supplementary\\Material}
+\defbeamertemplate{backup title}{thankyou}{Thanks for your attention}
 \defbeamertemplate{backup title page}{desy}{%
 \usebeamerfont{title}
 \begin{beamercolorbox}[wd=\paperwidth,ht=1.74cm,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{title}
