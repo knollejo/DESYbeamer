@@ -1,5 +1,6 @@
 \ProvidesPackage{beamerinnerthemedesy}[2017/01/20]
 \RequirePackage[absolute,overlay]{textpos}
+\RequirePackage{xifthen}
 
 \mode<presentation>
 
@@ -84,8 +85,16 @@
 \setbeamertemplate{itemize subsubitem}{\usebeamercolor[fg]{itemize items}\raisebox{1pt}{$\blacktriangleright$}}
 \settowidth\leftmargini{\usefont{OML}{cmm}{m}{it}\usebeamertemplate{itemize item}}
 \addtolength\leftmargini{\labelsep}
-\newcommand{\atem}{\setbeamercolor{itemize items}{parent=alerted text}\item\setbeamercolor{itemize items}{parent=local structure}}
-\newcommand{\etem}{\setbeamercolor{itemize items}{parent=emphasized text}\item\setbeamercolor{itemize items}{parent=local structure}}
+\newcommand<>{\etem}[1][]{%
+    \setbeamercolor{items}{parent=emphasized text}%
+    \ifthenelse{\isempty{#1}}{\item#2}{\item#2[#1]}%
+    \setbeamercolor{items}{parent=local structure}%
+}
+\newcommand<>{\atem}[1][]{%
+    \setbeamercolor{items}{parent=alerted text}%
+    \ifthenelse{\isempty{#1}}{\item#2}{\item#2[#1]}%
+    \setbeamercolor{items}{parent=local structure}%
+}
 
 \defbeamertemplate{backup title}{desy}{Supplementary\\Material}
 \defbeamertemplate{backup title}{thankyou}{Thanks for your attention}

@@ -12,7 +12,15 @@
 
 \setbeamercolor{structure}{fg=desyblue}
 \setbeamercolor{local structure}{fg=desyorange}
-\setbeamercolor{itemize items}{parent=local structure}
+
+\setbeamercolor{items}{parent=local structure}
+\setbeamercolor{itemize item}{parent=items}
+\setbeamercolor{itemize subitem}{parent=items}
+\setbeamercolor{itemize subsubitem}{parent=items}
+\setbeamercolor{enumerate item}{parent=items}
+\setbeamercolor{enumerate subitem}{parent=items}
+\setbeamercolor{enumerate subsubitem}{parent=items}
+\setbeamercolor{description item}{parent=items}
 
 \setbeamercolor{titlelike}{fg=white,bg=desyblue}
 \setbeamercolor{subtitle}{fg=desyorange,bg=white}
