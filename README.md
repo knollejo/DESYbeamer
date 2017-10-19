@@ -37,6 +37,7 @@ LaTeX beamer theme for DESY corporate design, based on previous work of Artur Lo
 * Change the way the slide number is written on each slide with ```\setbeamertemplate{page number in foot}[option]```, with the options ```page``` for Page 2, ```page/total``` for Page 2/7, ```slide``` for Slide 2, ```slide/total``` for Slide 2/7, ```number``` for 2, ```number/total``` for 2/7.
 * Use ```\etem``` or ```\atem``` to print item labels in emphasized or alerted colors.
 * Use the frame option ```vertical``` to print the logos in the frame footer vertically aligned instead of horizontally.
+* By default, the title on the title page ends with an orange dot. Use ```\setbeamertemplate{dot in title}[none]``` in the preamble to remove this dot.
 
 ## ToDo:
 

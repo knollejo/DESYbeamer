@@ -6,7 +6,7 @@
 
 \defbeamertemplate{title page}{desy}{
     \begin{textblock*}{\paperwidth}(0cm,0cm)\begin{beamercolorbox}[wd=\paperwidth,ht=1.74cm,dp=0.36cm,leftskip=0.3cm,rightskip=0.3cm]{title}
-        \usebeamerfont{title}\inserttitle\usebeamercolor[fg]{local structure}.\par%
+        \usebeamerfont{title}\inserttitle\usebeamertemplate{dot in title}\par%
     \end{beamercolorbox}\end{textblock*}
     \ifx\insertsubtitle\@empty
     \begin{textblock*}{\paperwidth}(0cm,2.1cm)
@@ -33,6 +33,10 @@
         \usebeamertemplate{logo in title}
     \end{textblock*}
 }
+
+\defbeamertemplate{dot in title}{desy}{\usebeamercolor[fg]{local structure}.}
+
+\defbeamertemplate{dot in title}{none}{}
 
 \defbeamertemplate{titlegraphic}{user}{
 	\inserttitlegraphic
@@ -101,7 +105,7 @@
 \defbeamertemplate{backup title page}{desy}{%
     \usebeamerfont{title}
     \begin{beamercolorbox}[wd=\paperwidth,ht=1.74cm,dp=1ex,leftskip=0.3cm,rightskip=0.3cm]{title}
-        \usebeamertemplate{backup title}\usebeamercolor[fg]{local structure}.\par%
+        \usebeamertemplate{backup title}\usebeamertemplate{dot in title}\par%
     \end{beamercolorbox}%
 }
 \defbeamertemplateparent{backup}{backup title,backup title page}{}
@@ -111,5 +115,6 @@
 \setbeamertemplate{logo in title}[desy]
 \setbeamertemplate{helmholtz logo}[en]
 \setbeamertemplate{backup}[desy]
+\setbeamertemplate{dot in title}[desy]
 
 \mode<all>
