@@ -2,6 +2,10 @@
 
 LaTeX beamer theme for DESY corporate design, based on previous work of Artur Lobanov and Jan Hajer.
 
+**TECH LAB: this template should be used when we want to look more DESY
+and less Tech Lab. There exists another beamer template with Tech Lab corporate
+design**
+
 ## Install:
 
 1. Keep in same folder as your main TeX file
