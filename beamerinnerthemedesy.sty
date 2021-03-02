@@ -9,27 +9,28 @@
         \usebeamerfont{title}\inserttitle\usebeamertemplate{dot in title}\par%
     \end{beamercolorbox}\end{textblock*}
     \ifx\insertsubtitle\@empty
-    \begin{textblock*}{\paperwidth}(0cm,2.1cm)
+    \begin{textblock*}{\paperwidth}(0cm,6.5cm)
     \else
     \begin{textblock*}{\paperwidth}(0cm,2.1cm)\begin{beamercolorbox}[wd=\paperwidth,ht=0.5cm,dp=0.17cm,leftskip=0.3cm,rightskip=0.3cm]{subtitle}
         \usebeamerfont{subtitle}\insertsubtitle\par%
     \end{beamercolorbox}\end{textblock*}
-    \begin{textblock*}{\paperwidth}(0cm,2.77cm)
+    \begin{textblock*}{\paperwidth}(0cm,7.5cm)
     \fi
-    \begin{beamercolorbox}[wd=\paperwidth,ht=3.2cm,sep=0cm]{titlegraphic}
+    \begin{beamercolorbox}[wd=\paperwidth,ht=0.0cm,sep=0cm]{titlegraphic}
         \usebeamertemplate{titlegraphic}
-    \end{beamercolorbox}\end{textblock*}
+    \end{beamercolorbox}
+    \end{textblock*}
     \ifx\insertsubtitle\@empty
-    \begin{textblock*}{0.44\paperwidth}(0.51\paperwidth,5.47cm)
+    \begin{textblock*}{0.44\paperwidth}(0.51\paperwidth,6.47cm)
     \else
-    \begin{textblock*}{0.44\paperwidth}(0.51\paperwidth,6.14cm)
+    \begin{textblock*}{0.44\paperwidth}(0.51\paperwidth,7.5cm)
     \fi
         \usebeamercolor[fg]{text in title}\usebeamerfont{text in title}%
         \usebeamerfont*{author}\usebeamercolor[fg]{author}\insertauthor\par
         \usebeamerfont*{institute}\usebeamercolor*[fg]{institute}\insertinstitute\par
         \usebeamerfont*{date}\usebeamercolor*[fg]{date}\insertdate
     \end{textblock*}
-    \begin{textblock*}{0.9\paperwidth}(0.05\paperwidth,7.7cm)
+    \begin{textblock*}{0.9\paperwidth}(0.05\paperwidth,8.7cm)
         \usebeamertemplate{logo in title}
     \end{textblock*}
 }
@@ -67,27 +68,27 @@
 \defbeamertemplateparent{helmholtz logo}{helmholtz logo in title}{}
 
 \defbeamertemplate{other logo in title}{desy}{
-	\includegraphics[height=1.4cm]{logos/desy}
+	\includegraphics[height=1.1cm]{logos/desy}
 }
 
 \defbeamertemplate{other logo in title}{desycms}{
-	\includegraphics[height=1.4cm]{logos/desy}
+	\includegraphics[height=1.1cm]{logos/desy}
 	\hspace{0.5cm}
-	\includegraphics[height=1.4cm]{logos/cms}
+	\includegraphics[height=1.1cm]{logos/cms}
 }
 
 \defbeamertemplate{other logo in title}{desycmsbril}{
-	\includegraphics[height=1.4cm]{logos/desy}
+	\includegraphics[height=1.1cm]{logos/desy}
 	\hspace{0.5cm}
-	\includegraphics[height=1.4cm]{logos/cms}
+	\includegraphics[height=1.1cm]{logos/cms}
 	\hspace{0.5cm}
-	\includegraphics[height=1.4cm]{logos/bril}
+	\includegraphics[height=1.1cm]{logos/bril}
 }
 
 \defbeamertemplate{other logo in title}{desytechlab}{
-	\includegraphics[height=1.4cm]{logos/desy}
+	\includegraphics[height=1.1cm]{logos/desy}
 	\hspace{0.5cm}
-	\includegraphics[height=1.4cm]{logos/mtcatechlab}
+	\includegraphics[height=1.1cm]{logos/mtcatechlab}
 }
 
 \setbeamertemplate{itemize item}{\usebeamercolor[fg]{itemize items}\textgreater}
